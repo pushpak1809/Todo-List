@@ -1,13 +1,209 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-image: linear-gradient(120deg,springgreen,rgb(0, 0, 0));
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    font-size: 2rem;
+  }
+  
+  header,
+  form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Secular One', sans-serif;
+  }
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+    outline: none;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  form input{
+    border-radius:8px 0 0 8px ;
+  }
+
+  form button {
+    color:springgreen;
+    background: #f7fffe;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius:0 8px 8px 0;
+
+  }
+  form button:hover {
+    background: springgreen;
+    color: white;
+  }
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .todo-list {
+    min-width: 30%;
+    list-style: none;
+  }
+  
+  .todo {
+    margin: 0.5rem;
+    background: white;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+    border-radius: 10px;
+
+  }
+  .filter-todo {
+    padding: 1rem;
+  }
+  .todo li {
+    flex: 1;
+
+  }
+  
+  .trash-btn,
+  .complete-btn {
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+
+  }
+  .trash-btn{
+    border-radius: 0 8px  8px 0;
+  }
+
+  .trash-btn:hover{
+    background-color: red;
+    color: whitesmoke;
+  }
+  
+  .complete-btn:hover{
+    background-color: rgb(13, 238, 13);
+    color: #fff;
+  }
+
+  .complete-btn {
+    background: rgb(11, 212, 162);
+  }
+  .todo-item {
+    padding: 0rem 0.5rem;
+    
+  }
+  
+  .fa-trash,
+  .fa-check {
+    pointer-events: none;
+    
+  }
+  
+  .fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+    border-radius: 10px;
+
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  /*CUSTOM SELECTOR */
+  select {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none; */
+    font-family: 'Secular One', sans-serif;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+  }
+  
+  /* Custom Select */
+  .select {
+    margin: 1rem;
+    position: relative;
+    font-family: 'Secular One', sans-serif;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  select {
+    color: #ff6f47;
+    font-family: 'Secular One', sans-serif;    cursor: pointer;
+    width: 12rem;
+    border-radius: 5px;
+  }
+  /* Arrow */
+  .select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #ff6f47;
+    cursor: pointer;
+    pointer-events: none;
+  }
+  /* Transition */
+  
+  /* .select:hover::after {
+    transform: scale(1.5);
+  } */
+
+
+  @media  screen and (max-width: 768px){
+    h1{
+      font-size: 2.5rem;
+    }
+    .todo-input{
+      width: 55vw;
+      margin-left: 16px;
+    }
+    .todo-button{
+      width: 16vw;
+    }
+    
+    .todo{
+      width: 90vw;
+    }
+
+    .filter-todo{
+      width: 3rem;
+      
+    }
+  } 
+  @media  screen and (min-width: 480px){
+    h1{
+      font-size: 2.5rem;
+    }
+    .todo-input{
+      width: 58vw;
+      margin-left: 10px;
+    }
+    .filter-todo{
+      width: 7rem;
+      
+    }
+  } 
